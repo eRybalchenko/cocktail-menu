@@ -1,9 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Drinks list</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -19,8 +13,47 @@
     <ion-button size="large" color="light" (click)="updateList()">
       <ion-icon slot="icon-only" name="search"></ion-icon>
     </ion-button>
-    <ion-button size="large" color="light" (click)="getRandomDrink()">
+    <ion-button
+      id="open-modal"
+      size="large"
+      color="light"
+      (click)="getRandomDrink()"
+    >
       <ion-icon slot="icon-only" name="dice"></ion-icon>
     </ion-button>
   </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      @for (drink of drinksList(); track drink.idDrink) {
+      <ion-col size="6" size-md="4" size-lg="2">
+        <ion-card
+          routerLink="/details/{{drink.idDrink}}"
+          style="cursor: pointer"
+        >
+          <ion-img [alt]="drink.strDrink" [src]="drink.strDrinkThumb"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{ drink.strDrink }}</ion-card-title>
+            <ion-card-subtitle>{{ drink.strGlass }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+
+  <ion-modal trigger="open-modal" showBackdrop="false">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Random drink</ion-title>
+          <ion-buttons slot="end">
+            <ion-button [strong]="true" (click)="closeModal()">Done</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <app-shared-card [drink]="randomDrink"></app-shared-card>
+    </ng-template>
+  </ion-modal>
 </ion-content>

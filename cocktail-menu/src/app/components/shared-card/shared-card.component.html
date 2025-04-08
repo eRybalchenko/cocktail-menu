@@ -1,0 +1,108 @@
+@if (drink) {
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ drink.strDrink }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-img [alt]="drink.strDrink" [src]="drink.strDrinkThumb"></ion-img>
+
+    <ion-item>
+      <ion-label> Name: {{ drink.strDrink }} </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Glass type: {{ drink.strGlass }} </ion-label>
+    </ion-item>
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Ingridients: </ion-label>
+      </ion-item-divider>
+      <ng-container *ngTemplateOutlet="ingridients"></ng-container>
+    </ion-item-group>
+
+    <ion-item>
+      <ion-label> Instuctions: {{ drink.strInstructions }} </ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+}
+
+<ng-template #ingridients>
+  @if (drink.strIngredient1 !==null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient1 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient2 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient2 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient3 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient3 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient4 !== null){
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient4 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient5 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient5 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient6 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient6 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient7 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient7 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient8 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient8 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient9 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient9 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient10 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient10 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient11 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient11 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient12 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient12 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient13 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient13 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient14 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient14 }}</ion-label>
+  </ion-item>
+  } @if (drink.strIngredient15 !== null) {
+  <ion-item lines="none">
+    <ion-icon name="add"></ion-icon>
+    <ion-label>{{ drink.strIngredient15 }}</ion-label>
+  </ion-item>
+  }
+</ng-template>

@@ -1,15 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Drink details</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    @if(drinkDetails$ | async; as drinkDetails) {
-      <ion-toolbar>
-        <ion-title size="large">{{ drinkDetails.strDrink }}</ion-title>
-      </ion-toolbar>
-    }
+  @if (drinkDetails) {
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/main"></ion-back-button>
+      </ion-buttons>
+      <ion-title size="large">{{ drinkDetails.strDrink }}</ion-title>
+    </ion-toolbar>
   </ion-header>
+
+  <app-shared-card [drink]="drinkDetails"></app-shared-card>
+  }
 </ion-content>
