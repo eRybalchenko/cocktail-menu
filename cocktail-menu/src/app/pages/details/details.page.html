@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Drink details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    @if(drinkDetails$ | async; as drinkDetails) {
+      <ion-toolbar>
+        <ion-title size="large">{{ drinkDetails.strDrink }}</ion-title>
+      </ion-toolbar>
+    }
+  </ion-header>
+</ion-content>

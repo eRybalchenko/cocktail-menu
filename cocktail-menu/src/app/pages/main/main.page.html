@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Drinks list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Drinks list</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item>
+    <ion-searchbar
+      placeholder="Search"
+      [(ngModel)]="queryText"
+      searchIcon="wine"
+    ></ion-searchbar>
+    <ion-button size="large" color="light" (click)="updateList()">
+      <ion-icon slot="icon-only" name="search"></ion-icon>
+    </ion-button>
+    <ion-button size="large" color="light" (click)="getRandomDrink()">
+      <ion-icon slot="icon-only" name="dice"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-content>
